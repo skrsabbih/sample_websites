@@ -11,17 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-.dummy-hero {
-    min-height: 100vh;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
-        url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
 .lux-header {
     position: absolute;
     top: 0;
@@ -261,6 +250,126 @@ body {
     display: none;
 }
 
+/* hero section added */
+.lux-hero-slider-wrap {
+    position: relative;
+}
+
+.luxHeroSlider,
+.luxHeroSlider .swiper-slide {
+    height: 100vh;
+}
+
+.lux-hero-slide {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.lux-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.18) 35%, rgba(0, 0, 0, 0.34) 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.08) 45%, rgba(0, 0, 0, 0.28));
+    z-index: 1;
+}
+
+.lux-hero-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34px;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 58px;
+}
+
+.lux-hero-left h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.lux-hero-left p {
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.lux-hero-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.lux-hero-center-line {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    animation: luxLineMove 1.8s ease-in-out infinite;
+}
+
+@keyframes luxLineMove {
+    0% {
+        transform: translateX(-50%) translateY(-18px);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(18px);
+        opacity: 0.35;
+    }
+}
+
+.lux-hero-pagination {
+    position: absolute;
+    left: 58px !important;
+    bottom: 18px !important;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lux-hero-pagination .swiper-pagination-bullet {
+    width: 18px;
+    height: 2px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.35);
+    opacity: 1;
+    margin: 0 !important;
+}
+
+.lux-hero-pagination .swiper-pagination-bullet-active {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+
 @media (max-width: 991px) {
     .lux-header {
         padding-top: 20px;
@@ -359,5 +468,59 @@ body {
     .mobile-submenu a {
         font-size: 15px;
         letter-spacing: 0;
+    }
+
+    /* lux-hero */
+    .luxHeroSlider,
+    .luxHeroSlider .swiper-slide,
+    .lux-hero-slide {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
+    .lux-hero-content {
+        padding: 0 24px;
+        bottom: 28px;
+    }
+
+    .lux-hero-left h1 {
+        font-size: 22px;
+    }
+
+    .lux-hero-left p {
+        font-size: 12px;
+    }
+
+    .lux-hero-right a {
+        font-size: 11px;
+    }
+
+    .lux-hero-pagination {
+        left: 24px !important;
+        bottom: 14px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .lux-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .lux-hero-center-line {
+        display: none;
+    }
+
+    .lux-hero-right {
+        align-self: flex-end;
+    }
+
+    .lux-hero-left h1 {
+        font-size: 18px;
+    }
+
+    .lux-hero-left p {
+        font-size: 11px;
     }
 }
