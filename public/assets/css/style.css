@@ -1,157 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
 body {
-    font-family: Arial, sans-serif;
-    color: #1f1f1f;
-    background-color: #f8f6f2;
+    background: #000;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
-.section-subtitle {
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: #8a6d46;
-    text-transform: uppercase;
-}
-
-.section-title {
-    font-size: 40px;
-    line-height: 1.2;
-    font-weight: 700;
-    color: #111;
-}
-
-.section-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-}
-
-.about-image-wrap {
+.dummy-hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.25)),
+        url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 
-.about-main-img {
-    min-height: 500px;
-    object-fit: cover;
-    width: 100%;
-}
-
-.about-floating-box {
+.lux-header {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
-    background: #fff;
-    padding: 16px 22px;
-    border-radius: 16px;
-}
-
-.about-floating-box .small-text {
-    display: block;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 4px;
-}
-
-/* featured projects custom css */
-
-.featured-projects-section {
-    background: #fff;
-}
-
-.project-intro-text {
-    max-width: 650px;
-}
-
-.project-card {
-    background: #fff;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    transition: all 0.35s ease;
-    height: 100%;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
-}
-
-.project-card-img {
-    overflow: hidden;
-    height: 260px;
-}
-
-.project-card-img img {
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    z-index: 9999;
+    padding-top: 36px;
 }
 
-.project-card:hover .project-card-img img {
-    transform: scale(1.05);
+.lux-navbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.project-card-body {
-    padding: 24px;
-}
-
-.project-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-}
-
-.project-location {
-    font-size: 14px;
-    color: #8a6d46;
-    font-weight: 600;
-}
-
-.project-price {
-    font-size: 13px;
-    background: #f3ede3;
-    color: #6d522f;
-    padding: 8px 12px;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
-.project-description {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.7;
-}
-
-.project-link {
-    display: inline-block;
-    margin-top: 10px;
+.lux-logo-link {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 18px;
     text-decoration: none;
-    color: #111;
-    font-weight: 700;
-    transition: all 0.3s ease;
+    color: #fff;
 }
 
-.project-link:hover {
-    color: #8a6d46;
+.lux-logo-mark {
+    width: 44px;
+    height: 62px;
+    position: relative;
+    flex: 0 0 44px;
+}
+
+.lux-logo-mark .line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.lux-logo-mark .line-v1 {
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 36px;
+}
+
+.lux-logo-mark .line-v2 {
+    left: 11px;
+    top: 0;
+    width: 2px;
+    height: 52px;
+}
+
+.lux-logo-mark .line-h1 {
+    left: 0;
+    top: 35px;
+    width: 14px;
+    height: 2px;
+}
+
+.lux-logo-mark .line-h2 {
+    left: 11px;
+    bottom: 8px;
+    width: 18px;
+    height: 2px;
+}
+
+.lux-logo-text {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    line-height: 1;
+    padding-top: 7px;
+    white-space: nowrap;
+}
+
+.lux-menu-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.lux-menu-list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+    margin: 0;
+    padding: 0;
+}
+
+.lux-menu-item {
+    position: relative;
+}
+
+.lux-menu-item>a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.lux-menu-item>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.95);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.lux-menu-item:hover>a::after,
+.lux-menu-item.active>a::after {
+    transform: scaleX(1);
+}
+
+.lux-has-dropdown {
+    position: relative;
+}
+
+.lux-dropdown {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    margin: 10px 0 0;
+    padding: 8px 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.28s ease;
+}
+
+.lux-dropdown li {
+    margin-bottom: 5px;
+}
+
+.lux-dropdown li:last-child {
+    margin-bottom: 0;
+}
+
+.lux-dropdown a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2;
+    transition: opacity 0.25s ease;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    padding-bottom: 3px;
+    transition: opacity 0.3s ease;
+}
+
+.lux-dropdown a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.95);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.lux-dropdown a:hover::after {
+    transform: scaleX(1);
+
+}
+
+.lux-dropdown a:hover {
+    opacity: 1;
+}
+
+.lux-has-dropdown:hover .lux-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lux-wa-item>a::after {
+    display: none !important;
+}
+
+.lux-wa-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding-bottom: 0 !important;
+}
+
+/* .lux-wa-link svg {
+    width: 38px;
+    height: 38px;
+    color: rgba(255, 255, 255, 0.95);
+} */
+
+.lux-wa-link i {
+    font-size: 20px;
+}
+
+.lux-mobile-toggle {
+    display: none;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.lux-mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.8px;
+    background: #fff;
+    margin: 5px auto;
+}
+
+.lux-mobile-menu {
+    display: none;
 }
 
 @media (max-width: 991px) {
-    .section-title {
-        font-size: 32px;
+    .lux-header {
+        padding-top: 20px;
     }
 
-    .about-main-img {
-        min-height: 380px;
-    }
-}
-
-@media (max-width: 575px) {
-    .section-title {
-        font-size: 28px;
+    .lux-navbar {
+        align-items: center;
     }
 
-    .project-card-img {
-        height: 220px;
+    .lux-logo-link {
+        gap: 12px;
+    }
+
+    .lux-logo-text {
+        font-size: 13px;
+        letter-spacing: 4px;
+        padding-top: 6px;
+    }
+
+    .lux-logo-mark {
+        width: 34px;
+        height: 50px;
+        flex: 0 0 34px;
+    }
+
+    .lux-logo-mark .line-v1 {
+        height: 28px;
+    }
+
+    .lux-logo-mark .line-v2 {
+        left: 9px;
+        height: 42px;
+    }
+
+    .lux-logo-mark .line-h1 {
+        top: 27px;
+        width: 12px;
+    }
+
+    .lux-logo-mark .line-h2 {
+        left: 9px;
+        width: 15px;
+    }
+
+    .lux-menu {
+        display: none;
+    }
+
+    .lux-mobile-toggle {
+        display: block;
+    }
+
+    .lux-mobile-menu {
+        display: none;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .lux-mobile-menu.active {
+        display: block;
+    }
+
+    .lux-mobile-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lux-mobile-menu>ul>li {
+        margin-bottom: 14px;
+    }
+
+    .lux-mobile-menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 0.6px;
+    }
+
+    .mobile-submenu {
+        display: none;
+        padding-top: 12px !important;
+        padding-left: 15px !important;
+    }
+
+    .mobile-submenu.active {
+        display: block;
+    }
+
+    .mobile-submenu li {
+        margin-bottom: 10px;
+    }
+
+    .mobile-submenu a {
+        font-size: 15px;
+        letter-spacing: 0;
     }
 }

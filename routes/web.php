@@ -8,4 +8,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // home page route
-Route::get('/', [HomeController::class, 'sampleDesing']);
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
