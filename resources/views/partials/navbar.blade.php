@@ -55,7 +55,7 @@
                     </ul>
                 </nav>
 
-                <button class="lux-mobile-toggle" id="luxMobileToggle" type="button" aria-label="Toggle Menu">
+                <button class="lux-mobile-toggle" id="luxMobileToggle" type="butto  n" aria-label="Toggle Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -63,22 +63,54 @@
             </div>
         </div>
 
-        <div class="lux-mobile-menu" id="luxMobileMenu">
-            <ul>
-                <li>
-                    <a href="#" id="mobilePropertyToggle">THE PROPERTIES</a>
-                    <ul class="mobile-submenu" id="mobileSubmenu">
-                        <li><a href="#">Buy</a></li>
-                        <li><a href="#">Rent</a></li>
-                        <li><a href="#">Sell</a></li>
-                        <li><a href="#">Private Listings</a></li>
-                        <li><a href="#">New Developments</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">THE TEAM</a></li>
-                <li><a href="#">THE OFFICE</a></li>
-                <li><a href="#">THE CONTACT</a></li>
-            </ul>
+        <div class="lux-mobile-overlay" id="luxMobileMenu">
+            <div class="lux-mobile-top">
+                <a href="#" class="lux-logo-link">
+                    <div class="lux-logo-mark">
+                        <span class="line line-v1"></span>
+                        <span class="line line-v2"></span>
+                        <span class="line line-h1"></span>
+                        <span class="line line-h2"></span>
+                    </div>
+                    <div class="lux-logo-text">LUXURY LIVING</div>
+                </a>
+
+                <button class="lux-mobile-close" id="luxMobileClose" type="button" aria-label="Close Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="lux-mobile-menu-inner">
+                <ul class="lux-mobile-menu-list">
+                    <li class="lux-mobile-item">
+                        <a href="#" id="mobilePropertyToggle">THE PROPERTIES</a>
+                        <ul class="mobile-submenu active" id="mobileSubmenu">
+                            <li><a href="#">Buy</a></li>
+                            <li><a href="#">Rent</a></li>
+                            <li><a href="#">Sell</a></li>
+                            <li><a href="#">Private Listings</a></li>
+                            <li><a href="#">New Developments</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="lux-mobile-item">
+                        <a href="#">THE TEAM</a>
+                    </li>
+
+                    <li class="lux-mobile-item">
+                        <a href="#">THE OFFICE</a>
+                    </li>
+
+                    <li class="lux-mobile-item lux-mobile-contact-row">
+                        <a href="#">THE CONTACT</a>
+                        <a href="https://wa.me/8801764280085" target="_blank" class="lux-mobile-wa"
+                            aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>

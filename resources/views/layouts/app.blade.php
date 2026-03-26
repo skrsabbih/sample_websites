@@ -29,36 +29,49 @@
 
     {{-- mobile toggle and swiper js code is here --}}
     <script>
-        const luxMobileToggle = document.getElementById('luxMobileToggle');
-        const luxMobileMenu = document.getElementById('luxMobileMenu');
-        const mobilePropertyToggle = document.getElementById('mobilePropertyToggle');
-        const mobileSubmenu = document.getElementById('mobileSubmenu');
+        document.addEventListener("DOMContentLoaded", function() {
+            const luxMobileToggle = document.getElementById('luxMobileToggle');
+            const luxMobileMenu = document.getElementById('luxMobileMenu');
+            const luxMobileClose = document.getElementById('luxMobileClose');
+            const mobilePropertyToggle = document.getElementById('mobilePropertyToggle');
+            const mobileSubmenu = document.getElementById('mobileSubmenu');
 
-        if (luxMobileToggle) {
-            luxMobileToggle.addEventListener('click', function() {
-                luxMobileMenu.classList.toggle('active');
-            });
-        }
+            if (luxMobileToggle) {
+                luxMobileToggle.addEventListener('click', function() {
+                    luxMobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
 
-        if (mobilePropertyToggle) {
-            mobilePropertyToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                mobileSubmenu.classList.toggle('active');
-            });
-        }
-        {{-- add swiper js here --}}
-        const luxHeroSlider = new Swiper('.luxHeroSlider', {
-            loop: true,
-            effect: 'fade',
-            speed: 1200,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.lux-hero-pagination',
-                clickable: true,
-            },
+            if (luxMobileClose) {
+                luxMobileClose.addEventListener('click', function() {
+                    luxMobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            if (mobilePropertyToggle) {
+                mobilePropertyToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileSubmenu.classList.toggle('active');
+                });
+            }
+
+            if (typeof Swiper !== "undefined" && document.querySelector('.luxHeroSlider')) {
+                new Swiper('.luxHeroSlider', {
+                    loop: true,
+                    effect: 'fade',
+                    speed: 1200,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.lux-hero-pagination',
+                        clickable: true,
+                    },
+                });
+            }
         });
     </script>
 

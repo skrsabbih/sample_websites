@@ -228,6 +228,7 @@ body {
     font-size: 20px;
 }
 
+/* mobile toggol */
 .lux-mobile-toggle {
     display: none;
     width: 34px;
@@ -236,18 +237,155 @@ body {
     border: none;
     padding: 0;
     cursor: pointer;
+    position: relative;
+    z-index: 20;
 }
 
 .lux-mobile-toggle span {
     display: block;
     width: 24px;
-    height: 1.8px;
+    height: 1.5px;
     background: #fff;
     margin: 5px auto;
 }
 
-.lux-mobile-menu {
+.lux-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+    padding: 10px 22px 24px;
+    overflow-y: auto;
+}
+
+.lux-mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lux-mobile-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 6px;
+}
+
+.lux-mobile-close {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 52px;
+}
+
+.lux-mobile-close span {
+    position: absolute;
+    top: 25px;
+    left: 14px;
+    width: 24px;
+    height: 1.5px;
+    background: #d8d8d8;
+}
+
+.lux-mobile-close span:first-child {
+    transform: rotate(45deg);
+}
+
+.lux-mobile-close span:last-child {
+    transform: rotate(-45deg);
+}
+
+.lux-mobile-menu-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 90px);
+    padding-top: 10px;
+}
+
+.lux-mobile-menu-list {
+    list-style: none;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.lux-mobile-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 18px 0 14px;
+}
+
+.lux-mobile-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.lux-mobile-item>a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.mobile-submenu {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
     display: none;
+}
+
+.mobile-submenu.active {
+    display: block;
+}
+
+.mobile-submenu li {
+    margin-bottom: 8px;
+}
+
+.mobile-submenu li:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-submenu a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+}
+
+.lux-mobile-contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.lux-mobile-contact-row>a:first-child {
+    margin-left: 26px;
+}
+
+.lux-mobile-wa {
+    color: #f4f4f4;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lux-mobile-wa i {
+    font-size: 24px;
 }
 
 /* hero section added */
@@ -369,6 +507,146 @@ body {
     background: rgba(255, 255, 255, 0.95);
 }
 
+
+/* agency section css added */
+.lux-agency-section {
+    background: #000;
+    padding: 78px 0 120px;
+    position: relative;
+}
+
+.lux-agency-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.lux-agency-left {
+    padding-top: 8px;
+}
+
+.lux-agency-title {
+    margin: 0;
+    color: #cac8c8;
+    font-size: 100px;
+    line-height: 0.98;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lux-agency-line {
+    width: 100%;
+    max-width: 760px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.85);
+    margin: 42px 0 34px;
+}
+
+.lux-agency-text-wrap {
+    max-width: 760px;
+}
+
+.lux-agency-text-wrap p {
+    margin: 0;
+    color: rgba(174, 172, 172, 0.78);
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    text-align: justify;
+}
+
+.lux-agency-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 2px;
+}
+
+.lux-agency-image {
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+}
+
+.lux-agency-image img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.lux-agency-cta {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+    padding-top: 30px;
+}
+
+.lux-agency-cta span {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.lux-agency-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+.lux-agency-cta a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* text selection control */
+.lux-agency-section ::selection {
+    background: transparent;
+    color: #ffffff;
+}
+
+.lux-agency-section ::-moz-selection {
+    background: transparent;
+    color: #ffffff;
+}
+
+/* important: whole site selection */
+body ::selection {
+    background: transparent;
+    color: #ffffff;
+}
+
+body ::-moz-selection {
+    background: transparent;
+    color: #ffffff;
+}
+
+
+@media (max-width: 1199px) {
+    .lux-agency-title {
+        font-size: 82px;
+    }
+
+    .lux-agency-grid {
+        gap: 40px;
+    }
+}
 
 @media (max-width: 991px) {
     .lux-header {
@@ -499,6 +777,45 @@ body {
         left: 24px !important;
         bottom: 14px !important;
     }
+
+    /* lux-agency */
+    .lux-agency-section {
+        padding: 60px 0 90px;
+    }
+
+    .lux-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lux-agency-title {
+        font-size: 64px;
+    }
+
+    .lux-agency-line,
+    .lux-agency-text-wrap,
+    .lux-agency-image,
+    .lux-agency-cta {
+        max-width: 100%;
+    }
+
+    .lux-agency-right {
+        align-items: stretch;
+    }
+
+    .lux-agency-cta {
+        justify-content: space-between;
+    }
+
+    .lux-agency-cta span {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 992px) {
+    .lux-mobile-overlay {
+        display: none !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -522,5 +839,66 @@ body {
 
     .lux-hero-left p {
         font-size: 11px;
+    }
+
+    /* lux-agency */
+    .lux-agency-title {
+        font-size: 46px;
+    }
+
+    .lux-agency-line {
+        margin: 28px 0 24px;
+    }
+
+    .lux-agency-text-wrap p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .lux-agency-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .lux-agency-cta a {
+        min-width: 140px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .lux-agency-cta span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lux-mobile-overlay {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .lux-mobile-close {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+    }
+
+    .lux-mobile-close span {
+        top: 23px;
+        left: 12px;
+        width: 24px;
+    }
+
+    .lux-mobile-item>a {
+        font-size: 17px;
+    }
+
+    .mobile-submenu a {
+        font-size: 16px;
+    }
+
+    .lux-mobile-wa i {
+        font-size: 22px;
     }
 }
